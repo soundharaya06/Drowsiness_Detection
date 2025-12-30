@@ -1,5 +1,5 @@
 🚗 Driver Drowsiness Detection System using AI & Computer Vision
-An AI-powered real-time drowsiness monitoring system that detects prolonged eye closure using a webcam and alerts the user to prevent accidents. The system also supports employee management and logging of drowsiness events through a web-based dashboard.
+        An AI-powered real-time drowsiness monitoring system that detects prolonged eye closure using a webcam and alerts the user to prevent accidents. The system also supports employee management and logging of drowsiness events through a web-based dashboard.
 
 📌 Table of Contents
 1.	Overview
