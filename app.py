@@ -155,13 +155,24 @@ def video_feed():
     return Response(generate_frames(),
                     mimetype="multipart/x-mixed-replace; boundary=frame")
 
-@app.route("/stop_camera")
+@app.route("/start_camera", methods=["POST"])
+def start_camera():
+    global camera, camera_active
+    if not camera_active:
+        camera = cv2.VideoCapture(0)
+        camera_active = True
+    return ("", 204)
+
+
+@app.route("/stop_camera", methods=["POST"])
 def stop_camera():
-    global camera_active, alarm_on
+    global camera, camera_active
     camera_active = False
-    alarm_on = False
-    pygame.mixer.music.stop()
-    return "", 204
+    if camera:
+        camera.release()
+        camera = None
+    return ("", 204)
+
 
 
 @app.route("/employee")
